@@ -124,7 +124,8 @@ const graduates = [{
    the universities in the graduates array.
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
-const universities = [];
+const universities = [...new Set(graduates.map(graduate => graduate.university))]
+  .sort();
 console.log(universities);
 
 /* Request 2: Create a new array called contactInfo that contains both
@@ -135,13 +136,14 @@ name and the email information like this:
 Name email@example.com
 
 Log the result of your new array. */
-const contactInfo = [];
+const contactInfo = graduates.map(graduate => `${graduate.first_name} ${graduate.email}`);
 console.log(contactInfo);
 
 
 /* Request 3: Find out how many universities have the string 'Uni' included
     in their name. Create a new array called uni that contains them all. Log the result. */
-const uni = [];
+const uni = graduates.filter(graduate => graduate.university.toLowerCase().includes('uni'))
+  .map(graduate => graduate.university);
 console.log(uni);
 
 
@@ -221,6 +223,9 @@ The individual values in the array should look like this
 
 */
 const animalNames = [];
+zooAnimals.forEach((animal) => {
+  animalNames.push(`Name: ${animal.scientific_name}, Scientific: ${animal.scientific_name}`);
+});
 console.log(animalNames);
 
 /* Request 2: .map()
