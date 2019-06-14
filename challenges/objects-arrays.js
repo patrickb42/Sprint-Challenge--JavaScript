@@ -236,7 +236,7 @@ each name to convert them all to lower case.  Log the resut.
 
 */
 
-const lowerCase = [];
+const lowerCase = zooAnimals.map(animal => animal.animal_name.toLowerCase());
 console.log(lowerCase);
 
 /* Request 3: .filter()
@@ -245,7 +245,7 @@ The zoos are concenred about animals with a lower population count.
 Find out which animals have a population less than 5.
 
 */
-const lowerPopulation = [];
+const lowerPopulation = zooAnimals.filter(animal => animal.population < 5);
 console.log(lowerPopulation);
 
 /* Request 4: .reduce()
@@ -254,7 +254,7 @@ The zoos need to know their total animal population across the United States.
 Find the total population from all the zoos using the .reduce() method.
 
 */
-const populationTotal = 0;
+const populationTotal = zooAnimals.reduce((acc, animal) => acc + animal.population, 0);
 console.log(populationTotal);
 
 
