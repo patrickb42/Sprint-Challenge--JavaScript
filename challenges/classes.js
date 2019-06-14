@@ -12,10 +12,10 @@
   properties for length, width, and height
 */
 class Cuboid {
-  constructor(spec) {
-    this.length = spec.length;
-    this.width = spec.width;
-    this.height = spec.height;
+  constructor({ length, width, height }) {
+    this.length = length;
+    this.width = width;
+    this.height = height;
   }
 
   volume() {
@@ -37,9 +37,9 @@ console.log(cuboid.surfaceArea()); // 130
 // Find out the formulas for volume and surface area for cubes and create those methods
 //    using the dimension properties from CuboidMaker.
 class CubeMaker extends Cuboid {
-  constructor(spec) {
-    super({ length: spec.size, width: spec.size, height: spec.size });
-    this.size = spec.size;
+  constructor({ size }) {
+    super({ length: size, width: size, height: size });
+    this.size = size;
   }
 
   volume() {

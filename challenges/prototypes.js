@@ -9,10 +9,10 @@
   Create a constructor function named CuboidMaker that accept
   properties for length, width, and height
 */
-function Cuboid(spec) {
-  this.length = spec.length;
-  this.width = spec.width;
-  this.height = spec.height;
+function Cuboid({ length, width, height }) {
+  this.length = length;
+  this.width = width;
+  this.height = height;
 }
 
 /* == Step 2: Volume Method ==
